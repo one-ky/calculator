@@ -1,0 +1,53 @@
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 400px;
+    height: 800px;
+    /* gap: 10px; */
+    background-color: gray;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    align-items: center;
+
+}
+
+.numberPad {
+    display:grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 80px 80px 80px 80px; 
+    column-gap: 10px;
+    row-gap: 15px;
+    background-color: lightseagreen;
+    font-weight: 700;
+    font-size: 30px;
+    height: auto;
+
+  }
+
+  .operators {
+      display:grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 80px 80px 80px;
+      column-gap: 10px;
+      row-gap: 10px;
+      background-color: lightcoral;
+      font-weight: 700;
+      font-size: 30px;
+  }
+
+  .screen {
+      display:flex;
+      background-color: lightblue;
+      border-color: black;
+      height: 50px;
+      text-align: center;
+      justify-content: right;
+      padding-right: 10px;
+      align-items: center;
+
+  }
