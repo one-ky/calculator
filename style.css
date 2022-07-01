@@ -12,19 +12,22 @@
 
 .screen {
     text-align: right;
-    height: 40px;
+    height: 60px;
     line-height: 30px;
     padding: 16px 8px;
     font-size: 25px;
     background-color: lightblue;
     
+}
 
+#displayTop {
+    text-align: left;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 2fr);
-    grid-template-rows: repeat(4, 2fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 50px);
     font-size: 30px;
     padding: 5px 5px;
     color: white;
@@ -41,9 +44,7 @@
 }
 
 .screen {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
 }
-
 
