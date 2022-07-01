@@ -2,14 +2,13 @@ const digitButtons = document.querySelectorAll('.digit')
 const operatorButtons = document.querySelectorAll('.operator')
 const equalButton = document.getElementById('equals')
 const allClearButton = document.getElementById('allClear')
-const key = document.querySelectorAll('.buttons')
 const topScreen = document.getElementById('displayTop')
 const bottomScreen = document.getElementById('displayBottom')
 const deleteButton = document.getElementById('delete')
 
 
 function updateBottomDisplay(button) {
-    bottomScreen.textContent += button
+    bottomScreen.innerText += button
 }
 
 function calculate(num1, num2, operator){
@@ -21,7 +20,7 @@ function calculate(num1, num2, operator){
             updateScreens(num1, num2, operator, value)
 
             break;
-        case '–':
+        case '-':
             value = num1-num2
             updateScreens(num1, num2, operator, value)
             break;
@@ -36,7 +35,7 @@ function calculate(num1, num2, operator){
 
 
         default:
-            topScreen.textContent = value
+            topScreen.innerText = value
 
     }
 }
@@ -48,11 +47,10 @@ function clear(){
 
 
 function findOp () {
-    let length1 = bottomScreen.textContent.length
     const op = topScreen.innerText.slice(-1)
-    let string = topScreen.textContent
+    let string = topScreen.innerText
     const num1 = parseFloat(string)
-    let bottomNumber = bottomScreen.textContent
+    let bottomNumber = bottomScreen.innerText
     const num2 = parseFloat(bottomNumber)
     console.log('3 test')
     console.log(num1)
@@ -63,8 +61,8 @@ function findOp () {
 }
 
 function updateScreens(num1, num2, operator, value) {
-    bottomScreen.textContent = ''
-    topScreen.textContent = num1.toString() + operator.toString(operator) 
+    bottomScreen.innerText = value
+    topScreen.innerText = num1.toString() + operator.toString(operator) 
     + num2.toString() + '=' + value.toString()
 }
 
@@ -88,13 +86,13 @@ operatorButtons.forEach(button => {
 })
 
 allClearButton.addEventListener('click', () => {
-    bottomScreen.textContent = ''
-    topScreen.textContent= ''
+    bottomScreen.innerText = ''
+    topScreen.innerText= ''
     
 })
 
 deleteButton.addEventListener('click', () => {
-    bottomScreen.innerText = bottomScreen.textContent.slice(0,-1)
+    bottomScreen.innerText = bottomScreen.innerText.slice(0,-1)
 
 })
 
